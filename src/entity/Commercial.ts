@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+/* import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Commercial {
@@ -13,9 +13,13 @@ export class Commercial {
     public prenom: string;
 
     @Column('varchar')
+    public adresse: string;
+
+    @Column('varchar')
     public telephone: string;
 
     @Column('varchar')
     public mail: string;
 
 }
+ */

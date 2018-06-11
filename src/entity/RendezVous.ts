@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+/* import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class RendezVous {
@@ -6,13 +6,14 @@ export class RendezVous {
     @PrimaryGeneratedColumn()
     public id: number;
 
-    @Column('datetime')
-    public date: Date;
+    @Column('varchar')
+    public date: string;
 
     @Column('int')
-    public clientID: string;
+    public clientID: number;
 
     @Column('int')
-    public commercialID: string;
+    public commercialID: number;
 
 }
+ */
