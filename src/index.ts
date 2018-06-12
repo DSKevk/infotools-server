@@ -111,7 +111,6 @@ createConnection().then(async (connection) => {
 
     app.get('/rdv/delete/id=:id', async (req: Request, res: Response) => {
         const rdvID = req.params.id;
-
         const query = `DELETE FROM rendezvous WHERE id = ${rdvID}`;
         const result = await connection.query(query);
 
@@ -119,7 +118,7 @@ createConnection().then(async (connection) => {
     });
     // #endregion
 
-    // #region Commande par client
+    // #region Commande par client & all client
     app.get('/commande/id_client=:id', async (req: Request, res: Response) => {
         const clientID = req.params.id;
 
@@ -131,6 +130,11 @@ createConnection().then(async (connection) => {
         const commandes = mapToCommande(result);
 
         res.send(commandes);
+    });
+
+    app.get('/client/all', async (req: Request, res: Response) => {
+        const clients = await connection.query(`SELECT * FROM client`);
+        res.send(clients);
     });
     // #endregion
 
