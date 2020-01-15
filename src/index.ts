@@ -123,7 +123,7 @@ createConnection().then(async (connection) => {
         const clientID = req.params.id;
 
         const query = `
-            SELECT C.id, C.date, C.quantite, C.id_client, C.id_produit, C.quantite, P.libelle, P.prix
+            SELECT C.id, C.date, C.quantite, C.id_client, C.id_produit, C.quantite, P.libelle, P.prix, P.poids
             FROM commande C INNER JOIN produit P ON C.id_produit = P.id
             WHERE C.id_client = ${clientID};`;
         const result = await connection.query(query);

@@ -12,6 +12,7 @@ interface Produit {
     libelle: string;
     prix: number;
     quantite: number;
+    poids: number;
 }
 
 export function mapToCommande(result) {
@@ -48,6 +49,7 @@ export function createNewProduit(line): Produit {
     return {
         id: line.id_produit,
         libelle: line.libelle,
+        poids: line.poids,
         prix: line.prix,
         quantite: line.quantite,
     };
